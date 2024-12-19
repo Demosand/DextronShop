@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Chart Creator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i>
+                <span>ChartMaster</span>
+            </div>
+            <div class="chart-types">
+                <h3>Chart Types</h3>
+                <button class="chart-type-btn active" data-type="line">
+                    <i class="fas fa-chart-line"></i>
+                    Line Chart
+                </button>
+                <button class="chart-type-btn" data-type="bar">
+                    <i class="fas fa-chart-bar"></i>
+                    Bar Chart
+                </button>
+                <button class="chart-type-btn" data-type="pie">
+                    <i class="fas fa-chart-pie"></i>
+                    Pie Chart
+                </button>
+                <button class="chart-type-btn" data-type="doughnut">
+                    <i class="fas fa-circle-notch"></i>
+                    Doughnut Chart
+                </button>
+                <button class="chart-type-btn" data-type="radar">
+                    <i class="fas fa-spider"></i>
+                    Radar Chart
+                </button>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <span>Dark Mode</span>
+                <label class="switch">
+                    <input type="checkbox" id="themeToggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="top-bar">
+                <h1>Create Your Chart</h1>
+                <button id="downloadBtn" class="action-btn">
+                    <i class="fas fa-download"></i>
+                    Download Chart
+                </button>
+            </div>
+
+            <div class="content-grid">
+                <div class="data-panel">
+                    <div class="panel-header">
+                        <h2>Data Input</h2>
+                        <button id="sampleDataBtn" class="action-btn">
+                            <i class="fas fa-magic"></i>
+                            Load Sample Data
+                        </button>
+                    </div>
+                    <div class="input-container">
+                        <textarea id="dataInput" placeholder="Enter your data (one per line):
+Label1,Value1
+Label2,Value2
+Label3,Value3"></textarea>
+                        <div class="data-controls">
+                            <button id="clearDataBtn" class="secondary-btn">
+                                <i class="fas fa-eraser"></i>
+                                Clear
+                            </button>
+                            <button id="createChart" class="primary-btn">
+                                <i class="fas fa-wand-magic-sparkles"></i>
+                                Generate Chart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-panel">
+                    <div class="panel-header">
+                        <h2>Chart Preview</h2>
+                        <div class="chart-controls">
+                            <button id="toggleGrid" class="tool-btn">
+                                <i class="fas fa-border-all"></i>
+                            </button>
+                            <button id="toggleAnimation" class="tool-btn">
+                                <i class="fas fa-film"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
